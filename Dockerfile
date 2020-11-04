@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+VOLUME /tmp
+COPY target/*.jar springboot_docker_jenkins.jar
+ENTRYPOINT ["java","-jar","/springboot_docker_jenkins.jar"]
+
